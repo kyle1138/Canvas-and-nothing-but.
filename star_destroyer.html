@@ -1,0 +1,118 @@
+<html>
+
+<body>
+<canvas id="the_canvas" width="1200" height="800"></canvas>
+<script>
+
+var canvas = document.getElementById("the_canvas");
+var ctx = canvas.getContext("2d");
+var x = -100;
+var  y = 1;
+
+
+var draw = function(){
+
+  var rd1 = "rgb(" + (220 + Math.floor(Math.random()*20)) + "," + Math.floor(Math.random()*25) +"," + Math.floor(Math.random()*25)+")";
+  var jet = "rgb(" + ( 180 + Math.floor(Math.random()*50)) + "," + (180 + Math.floor(Math.random()*20)) +"," + (22 + Math.floor(Math.random()*20))+")";
+
+  ctx.fillStyle = "black";
+  ctx.fillRect(0,0,canvas.width, canvas.height);
+
+  x += 15
+  y += 20
+
+  ctx.fillStyle = "rgb(220,220,240)";
+  ctx.beginPath();
+  ctx.moveTo(360,170);
+  ctx.lineTo(650,610);
+  ctx.lineTo(830,230);
+  ctx.fill();
+
+  ctx.fillStyle = "rgb(130,140,130)";
+
+  ctx.beginPath();
+  ctx.moveTo(1160,170);
+  //ctx.<li></li>neTo(975,70);
+  ctx.lineTo(831,230);
+  ctx.lineTo(650,610);
+  ctx.fill();
+
+  ctx.fillStyle = "rgb(140,150,150)";
+
+  ctx.beginPath();
+  ctx.moveTo(1160,170);
+  //ctx.<li></li>neTo(975,70);
+  ctx.lineTo(1160,100);
+  ctx.lineTo(830,31);
+  ctx.lineTo(360,100);
+  ctx.lineTo(360,170);
+  ctx.lineTo(830,230);
+  ctx.fill();
+
+
+  ctx.fillStyle = "rgb(60,60,50)";
+
+  ctx.beginPath();
+  ctx.arc(630,130,44,0,Math.PI*2,true);
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(830,130,44,0,Math.PI*2,true);
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(1020,130,44,0,Math.PI*2,true);
+  ctx.fill();
+
+  ctx.fillStyle = jet;
+
+  ctx.beginPath();
+  ctx.arc(630,130,40+Math.random()*2,0,Math.PI*2,true);
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.arc(830,130,40+Math.random()*2,0,Math.PI*2,true);
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(1020,130,40+Math.random()*2,0,Math.PI*2,true);
+  ctx.fill();
+
+ctx.fillStyle = "red";
+ctx.beginPath();
+ctx.moveTo(700,370);
+ctx.lineTo( (700 - x) ,(370 +y));
+ctx.stroke();
+
+ctx.fillStyle = "red";
+ctx.fillRect(700 + x * -3,450 + y*-0.5,45,1.5);
+
+
+
+
+  if(x>canvas.width){
+    x=-100
+  }
+  else if( y >canvas.height){
+    y = -50
+  }
+/*  ctx.fillStyle = rd1;
+  ctx.fillRect(x,y,100,50);
+  ctx.fillStyle = rd2;
+  ctx.fillRect(x,y+100,100,50);
+  ctx.fillStyle = rd3;
+  ctx.fillRect(x + Math.floor(Math.random()*10),y + 100 + Math.floor(Math.random() * 15 ),100,50);
+  ctx.fillStyle = rd4;
+  ctx.fillRect(x,y+100,100,50);*/
+};
+
+setInterval(draw,30);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
